@@ -53,11 +53,26 @@ body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
+
 header {
 	display: flex;
 	justify-content: space-between;
 	margin: 50px 0
 }
+
+a {
+	color: black;
+}
+
+a:hover {
+	color: #B1663C;
+}
+
+header a {
+	text-decoration: none;
+}
+
 section {
 	margin: 50px 0
 }
@@ -75,7 +90,6 @@ h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
-;
 }
 
 h2{
@@ -121,50 +135,81 @@ li:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
+
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
 }
-.gallery {
+#gallery {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
+	gap: 18px
 }
 
-.gallery img {
+#gallery img {
 	width: 100%;
-
 }
-#contact {
+
+figcaption {
+	margin-top: 4.2px;
+	font-size: 13px;
+}
+
+#categories {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 10px;
+	margin: 45px 0;
+}
+
+.btn-category {
+	background-color: #FFFFFF;
+	border: 1px solid #1D6154;
+	border-radius: 60px;
+	padding: 9px 20px;
+	font-family: 'Syne';
+	font-size: 1em;
+	font-weight: 700;
+	color: #1D6154;
+	cursor: pointer;
+}
+
+.btn-category.active {
+	background-color: #1D6154;
+	color:#FFFFFF;
+}
+
+
+#contact, #login {
 	width: 50%;
 margin: auto;
 }
-#contact > * {
+#contact > *, #login > * {
 	text-align: center;
 
 }
-#contact h2{
+#contact h2, #login h2{
 	margin-bottom: 20px;
 }
-#contact form {
+#contact form, #login form {
 	text-align: left;
 	margin-top:30px;
 	display: flex;
 	flex-direction: column;
 }
 
-#contact input {
+#contact input, #login input {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
-#contact label {
+#contact label, #login label {
 	margin: 2em 0 1em 0;
 }
-#contact textarea {
+#contact textarea, #login textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
@@ -178,6 +223,15 @@ input[type="submit"]{
 	width: 180px;
 	text-align: center;
 	border-radius: 60px ;
+}
+
+input[type="submit"]:hover {
+	background: #0E2F28;
+	transition: .3s ease-in;
+}
+
+form a {
+	margin-inline: auto;
 }
 
 footer nav ul {

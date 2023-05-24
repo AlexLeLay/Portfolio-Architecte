@@ -22,15 +22,48 @@ async function getWorks() {
     Gallery.appendChild(Figure);
     Figure.appendChild(Image);
     Figure.appendChild(Caption);
+
+    Figure.dataset.category = work.categoryId;
   });
 }
 
 getWorks();
 
-async function getCategoriess() {
+async function getCategories() {
   const res = await fetch("http://localhost:5678/api/categories");
-  const CategoriessData = await res.json();
+  const CategoriesData = await res.json();
+
+  const Categories = document.getElementById("categories");
+
+  CategoriesData.forEach(category => {
+    const Button = document.createElement("button");
+    Button.textContent = category.name;
+    Button.setAttribute("data-category", category.id);
+    Button.addEventListener("click", () => {
+      const Thiscategory = Button.dataset.category;
+      filter(Thiscategory);
+    });
+
+    Categories.appendChild(Button);
+  });
 }
+
+const DisplayAll = document.getElementById("Tous");
+DisplayAll.addEventListener("click", () =>{
+  const Thiscategory = DisplayAll.dataset.category;
+  filter(Thiscategory);
+});
 
 getCategories();
 
+function filter(category) {
+  const figures = document.querySelectorAll("#gallery figure");
+
+  figures.forEach(figure => {
+    if (category === "0" || figure.dataset.category === category) {
+      figure.style.display = "block";
+    } else {
+      figure.style.display = "none";
+    }
+  });
+}

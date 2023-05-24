@@ -176,7 +176,7 @@ figcaption {
 	cursor: pointer;
 }
 
-.btn-category.active {
+.btn-category:hover {
 	background-color: #1D6154;
 	color:#FFFFFF;
 }

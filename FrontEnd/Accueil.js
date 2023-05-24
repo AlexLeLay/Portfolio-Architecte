@@ -38,6 +38,7 @@ async function getCategories() {
   CategoriesData.forEach(category => {
     const Button = document.createElement("button");
     Button.textContent = category.name;
+    Button.classList.add("btn-category");
     Button.setAttribute("data-category", category.id);
     Button.addEventListener("click", () => {
       const Thiscategory = Button.dataset.category;

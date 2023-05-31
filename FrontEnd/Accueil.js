@@ -68,3 +68,28 @@ function filter(category) {
     }
   });
 }
+
+
+function logOut() {
+  const logout = sessionStorage.removeItem("loginData");
+} 
+
+const login = sessionStorage.getItem("loginData");
+
+if (login) {  
+  const logIn = document.querySelector("#log");
+  logIn.innerText = "logout";
+  logIn.setAttribute("href", "./Accueil.html");
+  logIn.addEventListener("click", () => logOut());
+
+  const Header = document.querySelector("header");
+  const h1 = document.querySelector("h1");
+  const nav = document.querySelector("nav");
+
+  const h1_nav = document.createElement("div");
+  const edit = document.createElement("div");
+  edit.classList.add("header");
+
+  Header.insertBefore(edit, Header.firstChild);
+  
+}
